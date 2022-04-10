@@ -12,16 +12,17 @@ fn main() {
 
     let mut button_one = GUIButton::default();
     button_one.size = GUISize::from_pixels(175., 150.);
+    button_one.position = GUIPosition::from_pixels(200., 100.);
 
     let window_id = guibase.add_window(window);
-    guibase.add_child_to_parent(button_one, window_id);
+    let button_one_id = guibase.add_child_to_parent(button_one, window_id);
 
     let mut button_two = GUIButton::default();
     button_two.size = GUISize::from_pixels(50., 20.);
     button_two.radius = GUILength::from_pixels(5.);
     button_two.position = GUIPosition::from_pixels(20., 10.);
     button_two.background_color = GUIColor::from_rgba_u8u8u8u8(255, 0, 0, 255);
-    guibase.add_child_to_parent(button_two, window_id);
+    guibase.add_child_to_parent(button_two, button_one_id);
 
     let mut button_three = GUIButton::default();
     button_three.size = GUISize::from_pixels(120., 200.);
