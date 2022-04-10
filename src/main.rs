@@ -10,15 +10,16 @@ fn main() {
 
     let window = GUIWindow::default();
 
-    let button_one = GUIButton::default();
+    let mut button_one = GUIButton::default();
+    button_one.size = GUISize::from_pixels(175., 150.);
 
     let window_id = guibase.add_window(window);
-    let button_id = guibase.add_child_to_parent(button_one, window_id);
+    guibase.add_child_to_parent(button_one, window_id);
 
     let mut button_two = GUIButton::default();
-    button_two.size = GUISize::from_pixels(20., 20.);
+    button_two.size = GUISize::from_pixels(50., 20.);
     button_two.radius = GUILength::from_pixels(5.);
-    button_two.position = GUIPosition::from_pixels(10., 10.);
+    button_two.position = GUIPosition::from_pixels(20., 10.);
     button_two.background_color = GUIColor::from_rgba_u8u8u8u8(255, 0, 0, 255);
     guibase.add_child_to_parent(button_two, window_id);
 
