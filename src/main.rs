@@ -1,9 +1,9 @@
 use gui_rs::guiprocessing;
-use gui_rs::guiproperties::GUIColor;
-use gui_rs::guiproperties::guiposition::{GUISize, GUIPosition, GUILength};
+use gui_rs::guiproperties::guiposition::{GUILength, GUIPosition, GUISize};
 use gui_rs::guiproperties::guitraits::{Parent, Widget};
-use gui_rs::guiresources::{GUIResources, GUIBackend};
-use gui_rs::guiwidgets::{GUIBase, GUIWindow, GUIButton};
+use gui_rs::guiproperties::GUIColor;
+use gui_rs::guiresources::{GUIBackend, GUIResources};
+use gui_rs::guiwidgets::{GUIBase, GUIButton, GUIWindow};
 
 fn main() {
     let mut guibase = GUIBase::new();
@@ -28,7 +28,6 @@ fn main() {
     button_three.position = GUIPosition::from_pixels(100., 100.);
     button_three.background_color = GUIColor::from_rgba_u8u8u8u8(0, 150, 150, 255);
     guibase.add_child_to_parent(button_three, window_id);
-
 
     let resources = GUIResources::default();
 
